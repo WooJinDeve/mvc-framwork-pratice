@@ -31,6 +31,15 @@ public class CalculatorTest {
         assertThat(calculateResult).isEqualTo(result);
     }
 
+    @DisplayName("덧셈 연산을 수행한다.")
+    @ParameterizedTest
+    @MethodSource("formulaAndResult")
+    void calculatorTest2(int operand1, String operator, int operand2, int result) {
+        int calculateResult = Calculator.calculate2(operand1, operator, operand2);
+
+        assertThat(calculateResult).isEqualTo(result);
+    }
+
     private static Stream<Arguments> formulaAndResult(){
         return Stream.of(
                 arguments(1, "+", 2, 3),
