@@ -1,12 +1,11 @@
-package org.example;
+package org.example.password;
 
 
-import org.assertj.core.api.Assertions;
+import org.example.password.PasswordValidator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Validate;
 
 import static org.assertj.core.api.Assertions.*;
 
