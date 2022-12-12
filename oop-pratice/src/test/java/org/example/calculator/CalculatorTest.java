@@ -1,7 +1,9 @@
 package org.example.calculator;
 
 import org.example.calculator.Calculator;
+import org.example.calculator.newcalculator.PositiveNumber;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -35,7 +37,7 @@ public class CalculatorTest {
     @ParameterizedTest
     @MethodSource("formulaAndResult")
     void calculatorTest2(int operand1, String operator, int operand2, int result) {
-        int calculateResult = Calculator.calculate2(operand1, operator, operand2);
+        int calculateResult = Calculator.calculate2(new PositiveNumber(operand1), operator, new PositiveNumber(operand2));
 
         assertThat(calculateResult).isEqualTo(result);
     }
@@ -47,5 +49,13 @@ public class CalculatorTest {
                 arguments(4, "*", 2, 8),
                 arguments(4, "/", 2, 2)
         );
+    }
+
+    @DisplayName("나눗셈에서 0을 나누는 경우 IllegalArgumentException 예외를 발생시킨다.")
+    @Test
+    public void calculateExceptionTest() {
+        assertThatCode(() -> Calculator.calculate2(new PositiveNumber(10), "/", new PositiveNumber(0)))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("0또는 음수를 전달 할 수 없습니다.");
     }
 }

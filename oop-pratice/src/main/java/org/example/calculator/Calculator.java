@@ -16,7 +16,7 @@ public class Calculator {
         return ArithmeticOperator.calculator(operand1, operator, operand2);
     }
 
-    public static int calculate2(int operand1, String operator, int operand2) {
+    public static int calculate2(PositiveNumber operand1, String operator, PositiveNumber operand2) {
         return arithmeticOperators.stream()
                 .filter(arithmeticOperators -> arithmeticOperators.supports(operator))
                 .map(arithmeticOperators -> arithmeticOperators.calculate(operand1, operand2))
