@@ -1,4 +1,4 @@
-package org.example.mvc;
+package org.example.support;
 
 import org.example.controller.Controller;
 import org.example.controller.HomeController;
