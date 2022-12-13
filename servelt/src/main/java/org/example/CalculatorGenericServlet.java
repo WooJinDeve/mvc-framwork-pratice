@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("calculate")
+//@WebServlet("calculate")
 @Deprecated
 public class CalculatorGenericServlet extends GenericServlet {
     private static final Logger logger = LoggerFactory.getLogger(CalculatorServlet.class);
@@ -21,7 +21,7 @@ public class CalculatorGenericServlet extends GenericServlet {
 
     @Override
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
-        logger.info("service");
+        logger.info("GenericServlet service");
         int operand1 = Integer.parseInt(request.getParameter("operand1"));
         String operator = request.getParameter("operator");
         int operand2 = Integer.parseInt(request.getParameter("operand2"));
