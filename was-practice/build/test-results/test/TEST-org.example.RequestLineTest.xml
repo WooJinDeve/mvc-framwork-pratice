@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.RequestLineTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-13T00:39:40" hostname="DESKTOP-M3GPKIV" time="0.081">
+  <properties/>
+  <testcase name="create()" classname="org.example.RequestLineTest" time="0.081"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

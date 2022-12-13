@@ -1,4 +1,4 @@
-package org.example.calculator.tobe;
+package org.example.calculator.domain;
 
 public class PositiveNumber {
 
