@@ -1,5 +1,7 @@
 package org.example.annotation;
 
+import org.example.support.RequestMethod;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

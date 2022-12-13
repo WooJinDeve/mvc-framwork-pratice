@@ -28,10 +28,12 @@ public class DispatcherServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("[DispatcherServlet] service started");
 
-        Controller handler = requestMappingHandler.findHandler(request.getRequestURI());
+
+        Controller handler = requestMappingHandler.findHandler(new HandlerKey(RequestMethod.valueOf(request.getMethod()), request.getRequestURI()));
         String vueName = handler.handleRequest(request, response);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(vueName);
         requestDispatcher.forward(request, response);
+
     }
 }
