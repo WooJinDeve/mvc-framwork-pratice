@@ -1,0 +1,8 @@
+.gradle
+.idea
+gradlew.bat
+gradle
+build
+settings.gradle
+gradlew
+tomcat.8080
