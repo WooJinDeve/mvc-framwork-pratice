@@ -1,9 +1,6 @@
 package org.example.support;
 
-import org.example.controller.Controller;
-import org.example.controller.HomeController;
-import org.example.controller.UserCreateController;
-import org.example.controller.UserListController;
+import org.example.controller.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +12,7 @@ public class RequestMappingHandler {
         mappings.put(new HandlerKey(RequestMethod.GET, "/"), new HomeController());
         mappings.put(new HandlerKey(RequestMethod.GET, "/users"), new UserListController());
         mappings.put(new HandlerKey(RequestMethod.POST, "/users"), new UserCreateController());
+        mappings.put(new HandlerKey(RequestMethod.GET, "/users/form"), new ForwardController("/user/form.jsp"));
     }
 
     public Controller findHandler(HandlerKey key){
