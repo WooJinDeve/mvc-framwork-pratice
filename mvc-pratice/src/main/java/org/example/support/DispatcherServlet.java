@@ -33,6 +33,7 @@ public class DispatcherServlet extends HttpServlet {
         requestMappingHandler.init();
 
         AnnotationHandlerMapping annotationHandlerMapping = new AnnotationHandlerMapping("org.example");
+        annotationHandlerMapping.initialize();
 
         handlerMapping = List.of(requestMappingHandler, annotationHandlerMapping);
 
